@@ -1,0 +1,19 @@
+# cache directories of python
+**/__pycache__/
+
+# development and notebooks
+dev/
+
+# pandas ai exports
+exports/
+
+# pandas ai logs
+**/*.log
+
+# pandas ai cache directory
+cache/
+
+# environment secrets..
+.env
+
+*.txt

@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "cbot"
+version = "0.1.0"
+description = "Data Analyst LLM using LLM API, Langchain, and PandasAI🐼"
+authors = ["Ezzaldin97 <kingtal632@yahoo.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+streamlit = "^1.20.0"
+pandasai = "^1.5.19"
+langchain = "^0.1.8"
+langchain-experimental = "^0.0.52"
+google-generativeai = "^0.3"
+seaborn = "^0.13.2"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.2.0"
+ipykernel = "^6.29.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
