@@ -1,7 +1,7 @@
 from src.generate_data.fake_data import FakeData
 
 if __name__ == "__main__":
-    generator = FakeData(iter = 100_000)
+    generator = FakeData(iter = 10_000)
     df1 = generator.generate_info_data()
     df2 = generator.generate_revenue_data()
     df3 = generator.generate_activity_data()
