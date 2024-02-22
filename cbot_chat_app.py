@@ -50,7 +50,10 @@ if "messages" not in st.session_state:
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
-        st.markdown(message["content"])
+        if not isinstance(message["content"], pd.DataFrame):
+            st.markdown(message["content"])
+        else:
+            st.write(message["content"])
 
 # Accept user input
 if prompt := st.chat_input("Please Ask Your Question"):
@@ -63,5 +66,8 @@ if prompt := st.chat_input("Please Ask Your Question"):
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
         response = sdl.chat(prompt)
-        st.write(response)
+        if not isinstance(response, pd.DataFrame):
+            st.markdown(response)
+        else:
+            st.write(response)
     st.session_state.messages.append({"role": "assistant", "content": response})
