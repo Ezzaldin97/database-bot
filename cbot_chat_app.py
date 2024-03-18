@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from src.pandasai_agent.read_schema import ReadSchema
-from pandasai.llm import GooglePalm
+from pandasai.llm import GooglePalm, BambooLLM
 from dotenv import dotenv_values
 from typing import List
 from sqlalchemy import create_engine
@@ -16,9 +16,13 @@ ENV = dotenv_values(".env")
 st.image(os.path.join('imgs', 'logo-new.svg'), caption='Artifical Intelligence')
 st.title("Etisalat C-Bot")
 
-llm = GooglePalm(
-    api_key=ENV['GOOGLE_PALM_API'],
-    temperature=0
+#llm = GooglePalm(
+#    api_key=ENV['GOOGLE_PALM_API'],
+#    temperature=0
+#)
+
+llm = BambooLLM(
+    api_key=ENV["PANDASAI_API_KEY"],
 )
 
 schema_reader = ReadSchema()
